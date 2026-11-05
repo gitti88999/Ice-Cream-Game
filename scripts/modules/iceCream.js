@@ -10,11 +10,17 @@ class IceCream {
     }
 
     draw(ctx) {
-        ctx.drawImage(document.querySelector(`#${this.pictureId}`), this.point.x, this.point.y, 500, 400)
+        const width = ctx.canvas.clientWidth
+        const height = ctx.canvas.clientHeight
+        const imageWidth = Math.min(width * 0.9, height * 0.55)
+        const imageHeight = imageWidth * 0.8
+        const x = (width - imageWidth) / 2
+        const y = (this.point.y / 950) * height
+
+        ctx.drawImage(document.querySelector(`#${this.pictureId}`), x, y, imageWidth, imageHeight)
 
     }
     moveDown() {
         this.point.moveDown()
     }
 }
-

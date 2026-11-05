@@ -1,7 +1,7 @@
 class Game {
-    constructor(width, hight) {
+    constructor(width, height) {
         this.width = width
-        this.hight = hight
+        this.height = height
         this.iceCreamsArray = init()
         this.ice = this.iceCreamsArray[0]
         this.player1 = new Player('player1')
@@ -14,10 +14,10 @@ class Game {
         this.ice.draw(ctx)
     }
     animate(ctx) {
-        ctx.clearRect(0, 0, this.width, this.hight)
+        ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight)
         this.ice.moveDown()
         this.draw(ctx)
-        if (this.ice.point.y > 950 || this.ice.isReady) {
+        if (this.ice.point.y > this.height || this.ice.isReady) {
             this.ice.isReady = false
             this.ice.point.y = -250
             this.i1 = 0
