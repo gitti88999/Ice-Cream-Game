@@ -24,7 +24,7 @@ body {
     height: min(82vh, 950px);
     height: min(82svh, 950px);
     max-width: 100%;
-    aspect-ratio: 250 / 950;
+    aspect-ratio: 1 / 2.5;
     justify-self: center;
 }
 
